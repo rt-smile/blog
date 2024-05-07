@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>BOM&amp;&amp;DOM | Haha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="window   window.innerHeight浏览器窗口的视口（viewport）高度。如果有水平滚动条，也会包括进去！ window.innerWidth浏览器窗口的视口（viewport）宽度。如果有垂直滚动条，也会包含进去！说明： 如果需要获取去除滚动条的宽度，访问跟元素&lt;html&gt;的clientWidth属性. Window.outerHeight浏览器窗口的高度 Wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BOM&amp;&amp;DOM">
+<meta property="og:url" content="http://example.com/2023/06/02/BOM-DOM/index.html">
+<meta property="og:site_name" content="Haha">
+<meta property="og:description" content="window   window.innerHeight浏览器窗口的视口（viewport）高度。如果有水平滚动条，也会包括进去！ window.innerWidth浏览器窗口的视口（viewport）宽度。如果有垂直滚动条，也会包含进去！说明： 如果需要获取去除滚动条的宽度，访问跟元素&lt;html&gt;的clientWidth属性. Window.outerHeight浏览器窗口的高度 Wi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/window.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/innerHeight_outerHeight.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/element.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/clientWidth_clientHeight.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/scrollheight.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/htmlelement.png">
+<meta property="og:image" content="http://example.com/2023/06/02/BOM-DOM/offsetWidth_Height.png">
+<meta property="article:published_time" content="2023-06-02T07:05:17.000Z">
+<meta property="article:modified_time" content="2024-03-06T09:15:37.396Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/06/02/BOM-DOM/window.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Haha" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Haha</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A beautiful day!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-BOM-DOM" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/02/BOM-DOM/" class="article-date">
+  <time class="dt-published" datetime="2023-06-02T07:05:17.000Z" itemprop="datePublished">2023-06-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>►<a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      BOM&amp;&amp;DOM
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 style="color: red; text-align: center;">window</h1>
+
+<p><img src="/2023/06/02/BOM-DOM/window.png"></p>
+<h2 id="window-innerHeight"><a href="#window-innerHeight" class="headerlink" title="window.innerHeight"></a>window.innerHeight</h2><p><strong>浏览器窗口的视口（viewport）高度。</strong><br><em><strong>如果有水平滚动条，也会包括进去！</strong></em></p>
+<h2 id="window-innerWidth"><a href="#window-innerWidth" class="headerlink" title="window.innerWidth"></a>window.innerWidth</h2><p><strong>浏览器窗口的视口（viewport）宽度。</strong><br><em><strong>如果有垂直滚动条，也会包含进去！</strong></em><br><em><strong>说明：</strong></em> 如果需要获取去除滚动条的宽度，访问跟元素<code>&lt;html&gt;</code>的<code>clientWidth</code>属性.</p>
+<h2 id="Window-outerHeight"><a href="#Window-outerHeight" class="headerlink" title="Window.outerHeight"></a>Window.outerHeight</h2><p><strong>浏览器窗口的高度</strong></p>
+<h2 id="Window-outerWidth"><a href="#Window-outerWidth" class="headerlink" title="Window.outerWidth"></a>Window.outerWidth</h2><p><strong>浏览器窗口的宽度</strong></p>
+<p><img src="/2023/06/02/BOM-DOM/innerHeight_outerHeight.png"></p>
+<h2 id="window-screenLeft-和-window-screenX"><a href="#window-screenLeft-和-window-screenX" class="headerlink" title="window.screenLeft 和 window.screenX"></a>window.screenLeft 和 window.screenX</h2><p><em><strong>前者是后者的别名</strong></em><br><strong>返回浏览器左边界到桌面左边界的水平距离。</strong></p>
+<h2 id="window-screenTop-和-window-screenY"><a href="#window-screenTop-和-window-screenY" class="headerlink" title="window.screenTop 和 window.screenY"></a>window.screenTop 和 window.screenY</h2><p><em><strong>前者是后者的别名</strong></em><br><strong>返回浏览器顶部到桌面顶部的垂直距离</strong></p>
+<h2 id="window-pageXOffset-和-window-scrollX"><a href="#window-pageXOffset-和-window-scrollX" class="headerlink" title="window.pageXOffset 和 window.scrollX"></a>window.pageXOffset 和 window.scrollX</h2><p><strong>前者是后者的别名</strong><br><em><strong>返回页面水平滚动的距离</strong></em></p>
+<h2 id="window-pageYOffset-和-window-scrollY"><a href="#window-pageYOffset-和-window-scrollY" class="headerlink" title="window.pageYOffset 和 window.scrollY"></a>window.pageYOffset 和 window.scrollY</h2><p><strong>前者是后者的别名</strong><br><em><strong>返回页面垂直方向滚动的距离</strong></em></p>
+<h1 style="color: red; text-align: center;">element</h1>
+
+<p><img src="/2023/06/02/BOM-DOM/element.png"></p>
+<h2 id="element-clientLeft"><a href="#element-clientLeft" class="headerlink" title="element.clientLeft"></a>element.clientLeft</h2><p><strong>The width of the left border of an element in pixels.</strong><br><em><strong>元素左边框的宽度</strong></em></p>
+<h2 id="element-clientTop"><a href="#element-clientTop" class="headerlink" title="element.clientTop"></a>element.clientTop</h2><p><strong>The width of the top border of an element in pixels.</strong><br><em><strong>元素上边框的宽度</strong></em></p>
+<h2 id="element-clientHeight"><a href="#element-clientHeight" class="headerlink" title="element.clientHeight"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight">element.clientHeight</a></h2><p><strong>返回元素的高度 (即本身有定义height,则为height的高度；否则为元素里面的内容撑开的高度)</strong><br><em><strong>在根元素（<code>&lt;html&gt;</code>元素）或<code>怪异模式下的&lt;body&gt;</code>元素上使用 clientHeight 时，该属性将返回(viewport’s height)视口高度（不包含任何滚动条）。</strong></em></p>
+<h2 id="element-clientWidth"><a href="#element-clientWidth" class="headerlink" title="element.clientWidth"></a>element.clientWidth</h2><p><strong>返回元素的宽度 (即本身定义的width,否则是元素里面的内容撑开的宽度)</strong><br><em><strong>在根元素（<code>&lt;html&gt;</code> 元素）或<code>怪异模式下的&lt;body&gt;</code> 元素上使用 clientWidth 时，该属性将返回(viewport’s height)视口宽度（不包含任何滚动条）。</strong></em></p>
+<p><img src="/2023/06/02/BOM-DOM/clientWidth_clientHeight.png"></p>
+<h2 id="element-scrollHeight"><a href="#element-scrollHeight" class="headerlink" title="element.scrollHeight"></a>element.scrollHeight</h2><p><strong>返回元素里内容的高度</strong><br><strong>即元素里的内容高度小于或等于（内容撑开容器的height）元素的高时，scrollHeight等于元素的高。当内容的高大于元素时，则为内容的高</strong><br><em><strong>用例：</strong></em>判断内容是否滚动到底</p>
+<h2 id="element-scrollWidth"><a href="#element-scrollWidth" class="headerlink" title="element.scrollWidth"></a>element.scrollWidth</h2><p><strong>返回元素里内容的宽度</strong><br>解释：与scrollHeight一样</p>
+<p><img src="/2023/06/02/BOM-DOM/scrollheight.png"></p>
+<h2 id="element-scrollTop"><a href="#element-scrollTop" class="headerlink" title="element.scrollTop"></a>element.scrollTop</h2><p><strong>获取或设置内容垂直滚动（卷起来）的距离，即可见内容顶部到元素整个内容顶部的距离</strong><br><em><strong>如果元素的内容没有产生垂直滚动条，则 <code>scrollTop</code> 为0</strong></em></p>
+<h2 id="element-scrollLeft"><a href="#element-scrollLeft" class="headerlink" title="element.scrollLeft"></a>element.scrollLeft</h2><p><strong>获取或设置内容水平（向左）滚动的距离</strong></p>
+<h1 style="color: red; text-align: center;">HTMLElement</h1>
+
+<p><img src="/2023/06/02/BOM-DOM/htmlelement.png"></p>
+<h2 id="HTMLElement-offsetHeight"><a href="#HTMLElement-offsetHeight" class="headerlink" title="HTMLElement.offsetHeight"></a>HTMLElement.offsetHeight</h2><p><strong>返回元素的高度（类似于element.clientHeight，只不过HTMLElement.offsetHeight包括边框、水平滚动条和根元素返回的是总高度，而不是视图高度）</strong></p>
+<h2 id="HTMLElement-offsetWidth"><a href="#HTMLElement-offsetWidth" class="headerlink" title="HTMLElement.offsetWidth"></a>HTMLElement.offsetWidth</h2><p><strong>返回元素的宽度（类似于element.clientWidth，只不过HTMLElement.offsetWidth包括边框、垂直滚动条和根元素返回的是总宽度，而不是视图宽度）</strong></p>
+<p><img src="/2023/06/02/BOM-DOM/offsetWidth_Height.png"></p>
+<h2 id="HTMLElement-offsetLeft"><a href="#HTMLElement-offsetLeft" class="headerlink" title="HTMLElement.offsetLeft"></a>HTMLElement.offsetLeft</h2><p><strong>返回元素左上角距离HTMLElement.offsetParent左边界的距离</strong></p>
+<h2 id="HTMLElement-offsetTop"><a href="#HTMLElement-offsetTop" class="headerlink" title="HTMLElement.offsetTop"></a>HTMLElement.offsetTop</h2><p><strong>返回元素顶部上面到HTMLElement.offsetParent顶部下面的距离</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/02/BOM-DOM/" data-id="clvw6jei30003nt470b5keurj" data-title="BOM&amp;&amp;DOM" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/06/27/shell/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Shell
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/29/%E5%85%B3%E4%BA%8EJS%E6%A8%A1%E5%9D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于JS模块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%B1%8D/">书籍</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E5%AE%83%E6%89%A9%E5%B1%95/">其它扩展</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/">工具软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/github/">github</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nginx/">nginx</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nvm/">nvm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/ssh/">ssh</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/vim/">vim</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/">TypeScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Get-Start/">Get Start</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Handbook/">Handbook</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80%E9%AD%85%E5%8A%9B/">语言魅力</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+    </div>
+  </div>
+ -->
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+ -->
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/30/http/">HTTP</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/15/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/04/websocket/">WebSocket</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/03/nginx/">nginx</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+ -->
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

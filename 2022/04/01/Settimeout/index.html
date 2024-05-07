@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Settimeout | Haha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="在学习Promise期间，使用Settimeout遇到的小坑。 直接上代码： 123let a &#x3D; 1;setTimeout(console.log, 0, a);a +&#x3D; 1;  此时输出的值是多少呢？ 分析一下，“setTimeout”在 0 秒后把 console.log 方法推到消息队列中，等到同步任务结束后再出列执行，并且把 a 作为参数传给console.log函数。 很好，因此，先执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Settimeout">
+<meta property="og:url" content="http://example.com/2022/04/01/Settimeout/index.html">
+<meta property="og:site_name" content="Haha">
+<meta property="og:description" content="在学习Promise期间，使用Settimeout遇到的小坑。 直接上代码： 123let a &#x3D; 1;setTimeout(console.log, 0, a);a +&#x3D; 1;  此时输出的值是多少呢？ 分析一下，“setTimeout”在 0 秒后把 console.log 方法推到消息队列中，等到同步任务结束后再出列执行，并且把 a 作为参数传给console.log函数。 很好，因此，先执">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/04/01/Settimeout/jt.png">
+<meta property="article:published_time" content="2022-04-01T02:26:31.000Z">
+<meta property="article:modified_time" content="2024-03-06T09:15:37.412Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/04/01/Settimeout/jt.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Haha" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Haha</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A beautiful day!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Settimeout" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/01/Settimeout/" class="article-date">
+  <time class="dt-published" datetime="2022-04-01T02:26:31.000Z" itemprop="datePublished">2022-04-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>►<a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Settimeout
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在学习Promise期间，使用Settimeout遇到的小坑。 直接上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, a);</span><br><span class="line">a += <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>此时输出的值是多少呢？</p>
+<p>分析一下，“setTimeout”在 0 秒后把 <code>console.log</code> 方法推到消息队列中，等到同步任务结束后再出列执行，并且把 a 作为参数传给<code>console.log</code>函数。</p>
+<p>很好，因此，先执行 <code>let a = 1</code>, 接着遇到”setTimeout”（进行异步操作，但不需要我们管），然后到了 <code>a += 1</code>, 此时a的值为2。<br>执行完了同步任务后，开始执行异步任务，也就是”console.log“ 方法，打印出 a的值为2！！ 完成！！</p>
+<p>但是，打印出来 a的值是1。。。 </p>
+<p>好吧！！ 是我不太熟悉“setTimeout”。 能出现这种情况，说明在同步执行到“setTimeout”时，对此时的 a 进行了求值，也就是1。并把这个值记录下来，到时作为传给”console.log”函数的参数。而后面的“a +&#x3D; 1”，则无所谓了。</p>
+<p><em><strong>总结：在使用“setTimeout”进行传参时，它是进行同步操作的。也就是记录当前的值，作为后面回调函数的参数</strong></em></p>
+<p>再来，上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = &#123;&#125;</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">1000</span>, p)</span><br><span class="line">p.<span class="property">a</span> = <span class="string">&#x27;a&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>ok，首先执行“let p &#x3D; {}“，然后遇到”settimeout“，根据前面的总结，此时”p的值为{}”。后面的“p.a &#x3D; ‘a’ “，不用管。那打印出来的就是 ”{}”。完成！！！</p>
+<p>很好，得到的却是“{a: ‘a’}” ！！！ 为什么呢？ 不是同步操作，记录当时 “p的值是{}“吗？ 怎么被后面的操作影响了，得到”{a: ‘a’}”呢？ 难道前面的总结有错？</p>
+<p>淡定！总结没有错，给“setTimeout”的回调函数传参时，确实是同步操作，并记录了当时“p的值{}“。 只是此时的”p为引用类型“，<strong>引用类型存在堆里面，把引用类型作为参数值传递时，本质上是传递指向堆内存的地址，也就是指针</strong>。</p>
+<p>因此，”p的值为指针，指向{}”。当执行完“p.a &#x3D; ‘a’ “，再执行回调函数。“p就是指向{a: ‘a’}”啦 ！！！</p>
+<p>终于到万恶之源了！！ 不多说，show code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> p1 = p.<span class="title function_">then</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;p2&#x27;</span>,p2)</span><br><span class="line">    <span class="keyword">return</span> p2</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">1000</span>, p1, p2, p1 === p2);</span><br></pre></td></tr></table></figure>
+
+<p>当时，只想查看 “p1 &#x3D;&#x3D;&#x3D; p2“ 是 <code>true</code> ,还是 <code>false</code>。 当然，我认为是“true”；实际是“false”。 当然，在分析上面代码之后，“p1 &#x3D;&#x3D;&#x3D; p2” 相当于 “null &#x3D;&#x3D;&#x3D; Promise.resolve()” 。。。<br>这不是我要的。我的需求是两个”Promise实例” 是否相等。因此正确的比较方法最后附上。</p>
+<p>回归正题！上面的“p2” 为什么是 null呢？根据之前的总结，在同步执行到“setTimeout”时，此时的“p2为null的引用”，并把它记录，到时作为回调函数的参数值。</p>
+<p>更加直观的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> p1 = p.<span class="title function_">then</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">    <span class="keyword">return</span> p2</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">(<span class="params">xp1, yp2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xp1&#x27;</span>, xp1, <span class="string">&#x27;  yp2&#x27;</span>, yp2)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p1, p2, p1 === p2)</span><br><span class="line">&#125;, <span class="number">5000</span>, p1, p2);</span><br></pre></td></tr></table></figure>
+
+<p>结果：<br><img src="/2022/04/01/Settimeout/jt.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/01/Settimeout/" data-id="clvw6jei6000bnt479tdtbyv1" data-title="Settimeout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/18/github/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          github
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/31/Promise-AsyncAwait/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Promise_AsyncAwait</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%B1%8D/">书籍</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E5%AE%83%E6%89%A9%E5%B1%95/">其它扩展</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/">工具软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/github/">github</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nginx/">nginx</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nvm/">nvm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/ssh/">ssh</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/vim/">vim</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/">TypeScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Get-Start/">Get Start</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Handbook/">Handbook</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80%E9%AD%85%E5%8A%9B/">语言魅力</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+    </div>
+  </div>
+ -->
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+ -->
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    <!-- 
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/30/http/">HTTP</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/15/vim/">vim</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/04/websocket/">WebSocket</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/03/nginx/">nginx</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+ -->
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
