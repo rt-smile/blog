@@ -534,18 +534,8 @@ video {
     max-width: 1536px;
   }
 }
-.m-auto {
-  margin: auto;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
 .mt-8 {
   margin-top: 2rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
