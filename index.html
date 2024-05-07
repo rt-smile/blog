@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2024/03/06/hello-world/" data-id="clvw9sbc100148x471l93cmle" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2024/03/06/hello-world/" data-id="clvwajp9n000xlm47fzt8cun7" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -183,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/09/30/http/" data-id="clvw9sbc0000v8x47hzz32y9m" data-title="HTTP" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/09/30/http/" data-id="clvwajp9n0010lm47bphy0865" data-title="HTTP" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -231,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/08/15/vim/" data-id="clvw9sbc2001g8x473v9856ze" data-title="vim" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/08/15/vim/" data-id="clvwajp9p001llm479y84bi4k" data-title="vim" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -284,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/08/04/websocket/" data-id="clvw9sbc3001i8x47ao8a12xd" data-title="WebSocket" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/08/04/websocket/" data-id="clvwajp9p001nlm471i0736js" data-title="WebSocket" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -339,7 +339,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/08/03/nginx/" data-id="clvw9sbc100118x471g10cebm" data-title="nginx" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/08/03/nginx/" data-id="clvwajp9o0015lm470fllemd6" data-title="nginx" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -383,7 +383,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/07/25/pseudo-classes/" data-id="clvw9sbc100178x4715qo4p5c" data-title="pseudo-classes" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/07/25/pseudo-classes/" data-id="clvwajp9p001glm470yl76lx6" data-title="pseudo-classes" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -435,7 +435,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/07/25/css-concepts-and-news/" data-id="clvw9sbbz000l8x478jm566cp" data-title="css concepts and news" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/07/25/css-concepts-and-news/" data-id="clvwajp9l000klm479ft89c4z" data-title="css concepts and news" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -474,8 +474,11 @@ nginx -t
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="设计模式-design-patterns"><a href="#设计模式-design-patterns" class="headerlink" title="设计模式 design patterns"></a>设计模式 design patterns</h2><ul>
-<li><strong>发布订阅模式</strong></li>
-<li><strong>观察者模式</strong><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2161802">详情</a></li>
+<li><p><strong>发布订阅模式</strong></p>
+</li>
+<li><p><strong>观察者模式</strong></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903785689546760">参考</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> state = &#123;<span class="attr">hero</span>: <span class="string">&#x27;凤凰&#x27;</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> subscribers = [];</span><br><span class="line"><span class="comment">//订阅 定义一个 subscribe </span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">subscribe</span> = (<span class="params">fn</span>) =&gt; &#123;</span><br><span class="line">    subscribers.<span class="title function_">push</span>(fn)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//发布</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">dispatch</span> = (<span class="params">name</span>) =&gt; &#123;</span><br><span class="line">    state.<span class="property">hero</span> = name;</span><br><span class="line">    <span class="comment">//当数据发生改变，调用（通知）所有方法（订阅者）</span></span><br><span class="line">    subscribers.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span>=&gt;</span><span class="title function_">fn</span>())</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过 subscribe 发起订阅</span></span><br><span class="line"><span class="title function_">subscribe</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(state.<span class="property">hero</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//改变state状态，就会自动打印名称</span></span><br><span class="line"><span class="comment">//这里要注意的是，state状态不能直接去修改</span></span><br><span class="line"><span class="title function_">dispatch</span>(<span class="string">&#x27;发条&#x27;</span>) </span><br><span class="line"><span class="title function_">dispatch</span>(<span class="string">&#x27;狐狸&#x27;</span>)</span><br><span class="line"><span class="title function_">dispatch</span>(<span class="string">&#x27;卡牌&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="渲染模式-Rendering-Patterns"><a href="#渲染模式-Rendering-Patterns" class="headerlink" title="渲染模式 Rendering Patterns"></a>渲染模式 Rendering Patterns</h2><h2 id="性能模式-Performance-Patterns"><a href="#性能模式-Performance-Patterns" class="headerlink" title="性能模式 Performance Patterns"></a>性能模式 Performance Patterns</h2><ul>
 <li>Dynamic Import</li>
@@ -486,7 +489,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/07/24/Patterns/" data-id="clvw9sbbx000c8x47fe015asa" data-title="Patterns 模式" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/07/24/Patterns/" data-id="clvwajp9j000blm479q0o14q1" data-title="Patterns 模式" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -537,7 +540,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/07/20/command-line/" data-id="clvw9sbby000j8x477u95fd78" data-title="command line" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/07/20/command-line/" data-id="clvwajp9k000glm470srnbydi" data-title="command line" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -598,7 +601,7 @@ nginx -t
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/blog/2023/07/05/%E5%8F%A5%E6%AE%B5/" data-id="clvw9sbc600308x47a16m4tol" data-title="美句" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2023/07/05/%E5%8F%A5%E6%AE%B5/" data-id="clvwajp9v0030lm47anax6sm6" data-title="美句" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
