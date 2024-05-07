@@ -491,6 +491,12 @@ body {
 .search-form-submit:focus {
   color: #777;
 }
+#haha {
+  -webkit-animation: slideup 1s ease;
+  -moz-animation: slideup 1s ease;
+  -ms-animation: slideup 1s ease;
+  animation: slideup 1s ease;
+}
 .article {
   margin: 50px 0;
   -webkit-animation: slideup 1s ease;
