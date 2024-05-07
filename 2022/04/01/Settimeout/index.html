@@ -9,21 +9,21 @@
   <meta name="description" content="在学习Promise期间，使用Settimeout遇到的小坑。 直接上代码： 123let a &#x3D; 1;setTimeout(console.log, 0, a);a +&#x3D; 1;  此时输出的值是多少呢？ 分析一下，“setTimeout”在 0 秒后把 console.log 方法推到消息队列中，等到同步任务结束后再出列执行，并且把 a 作为参数传给console.log函数。 很好，因此，先执">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Settimeout">
-<meta property="og:url" content="http://example.com/2022/04/01/Settimeout/index.html">
+<meta property="og:url" content="http://example.com/blog/2022/04/01/Settimeout/index.html">
 <meta property="og:site_name" content="Haha">
 <meta property="og:description" content="在学习Promise期间，使用Settimeout遇到的小坑。 直接上代码： 123let a &#x3D; 1;setTimeout(console.log, 0, a);a +&#x3D; 1;  此时输出的值是多少呢？ 分析一下，“setTimeout”在 0 秒后把 console.log 方法推到消息队列中，等到同步任务结束后再出列执行，并且把 a 作为参数传给console.log函数。 很好，因此，先执">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/04/01/Settimeout/jt.png">
+<meta property="og:image" content="http://example.com/blog/2022/04/01/Settimeout/jt.png">
 <meta property="article:published_time" content="2022-04-01T02:26:31.000Z">
 <meta property="article:modified_time" content="2024-03-06T09:15:37.412Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/04/01/Settimeout/jt.png">
+<meta name="twitter:image" content="http://example.com/blog/2022/04/01/Settimeout/jt.png">
   
-    <link rel="alternate" href="/atom.xml" title="Haha" type="application/atom+xml">
+    <link rel="alternate" href="/blog/atom.xml" title="Haha" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/blog/favicon.png">
   
   
     
@@ -31,11 +31,11 @@
 
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -49,11 +49,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Haha</a>
+        <a href="/blog/" id="logo">Haha</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">A beautiful day!</a>
+          <a href="/blog/" id="subtitle">A beautiful day!</a>
         </h2>
       
     </div>
@@ -61,20 +61,20 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/blog/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com/blog"></form>
       </div>
     </div>
   </div>
@@ -83,12 +83,12 @@
       <div class="outer">
         <section id="main"><article id="post-Settimeout" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/01/Settimeout/" class="article-date">
+    <a href="/blog/2022/04/01/Settimeout/" class="article-date">
   <time class="dt-published" datetime="2022-04-01T02:26:31.000Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>►<a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>►<a class="article-category-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a>
   </div>
 
   </div>
@@ -131,12 +131,12 @@
 <p>更加直观的方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> p1 = p.<span class="title function_">then</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">    <span class="keyword">return</span> p2</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">(<span class="params">xp1, yp2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xp1&#x27;</span>, xp1, <span class="string">&#x27;  yp2&#x27;</span>, yp2)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(p1, p2, p1 === p2)</span><br><span class="line">&#125;, <span class="number">5000</span>, p1, p2);</span><br></pre></td></tr></table></figure>
 
-<p>结果：<br><img src="/2022/04/01/Settimeout/jt.png" alt="img"></p>
+<p>结果：<br><img src="/blog/2022/04/01/Settimeout/jt.png" alt="img"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/Settimeout/" data-id="clvw6jei6000bnt479tdtbyv1" data-title="Settimeout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/blog/2022/04/01/Settimeout/" data-id="clvw6tfad000bwm47fgse0hs4" data-title="Settimeout" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -146,7 +146,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/18/github/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2022/04/18/github/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -156,7 +156,7 @@
     </a>
   
   
-    <a href="/2022/03/31/Promise-AsyncAwait/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2022/03/31/Promise-AsyncAwait/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Promise_AsyncAwait</div>
     </a>
@@ -175,7 +175,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6%E7%B1%8D/">书籍</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E5%AE%83%E6%89%A9%E5%B1%95/">其它扩展</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/">工具软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/github/">github</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nginx/">nginx</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nvm/">nvm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/ssh/">ssh</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/vim/">vim</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/">TypeScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Get-Start/">Get Start</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Handbook/">Handbook</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80%E9%AD%85%E5%8A%9B/">语言魅力</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E4%B9%A6%E7%B1%8D/">书籍</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%85%B6%E5%AE%83%E6%89%A9%E5%B1%95/">其它扩展</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/">工具软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/github/">github</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nginx/">nginx</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/nvm/">nvm</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/ssh/">ssh</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/vim/">vim</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/">TypeScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Get-Start/">Get Start</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/Handbook/">Handbook</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E8%AF%AD%E8%A8%80%E9%AD%85%E5%8A%9B/">语言魅力</a></li></ul>
     </div>
   </div>
 
@@ -185,7 +185,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li></ul>
     </div>
   </div>
  -->
@@ -195,7 +195,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+      <a href="/blog/tags/hexo/" style="font-size: 10px;">hexo</a>
     </div>
   </div>
  -->
@@ -204,7 +204,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -217,23 +217,23 @@
       <ul>
         
           <li>
-            <a href="/2024/03/06/hello-world/">Hello World</a>
+            <a href="/blog/2024/03/06/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2023/09/30/http/">HTTP</a>
+            <a href="/blog/2023/09/30/http/">HTTP</a>
           </li>
         
           <li>
-            <a href="/2023/08/15/vim/">vim</a>
+            <a href="/blog/2023/08/15/vim/">vim</a>
           </li>
         
           <li>
-            <a href="/2023/08/04/websocket/">WebSocket</a>
+            <a href="/blog/2023/08/04/websocket/">WebSocket</a>
           </li>
         
           <li>
-            <a href="/2023/08/03/nginx/">nginx</a>
+            <a href="/blog/2023/08/03/nginx/">nginx</a>
           </li>
         
       </ul>
@@ -258,25 +258,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/blog/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="/blog/js/script.js"></script>
 
 
 
